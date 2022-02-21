@@ -1,11 +1,10 @@
-package assignment1;
+package assignment4;
 
 import java.util.Scanner;
 
-public class PrintFiveNumbers {
+public class BubbleSort {
 
 	public static void main(String[] args) {
-		
 		Scanner s=new Scanner(System.in);
 		System.out.println("Enter number of array elements :");
 		int n=s.nextInt();
@@ -16,21 +15,34 @@ public class PrintFiveNumbers {
 			a[i]=s.nextInt();
 		}
 		s.close();
-		
-		System.out.println("Array elements printing  usin for loop :");
+		System.out.println("Array elements Before sorting are :");
 		for(int i=0;i<n;i++)
 		{
 			System.out.println(a[i]);
 			
 		}
-		
-		System.out.println("Array elements printing  usin for each loop :");
-		for(int i:a)
+		int temp;
+		for(int i=0;i<n;i++) 
 		{
-			System.out.println(i);
+			for(int j=0;j<n-i-1;j++)
+			{
+				if(a[j]>a[j+1])
+				{
+					temp=a[j];
+					a[j]=a[j+1];
+					a[j+1]=temp;
+				}
+			}
+		}
+		System.out.println("Array elements After sorting are :");
+		for(int i=0;i<n;i++)
+		{
+			System.out.println(a[i]);
 			
 		}
-
 	}
-
 }
+
+
+
+

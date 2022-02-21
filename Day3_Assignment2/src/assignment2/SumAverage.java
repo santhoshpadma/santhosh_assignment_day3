@@ -1,14 +1,15 @@
-package assignment1;
+package assignment2;
 
 import java.util.Scanner;
 
-public class PrintFiveNumbers {
+public class SumAverage {
 
 	public static void main(String[] args) {
-		
 		Scanner s=new Scanner(System.in);
 		System.out.println("Enter number of array elements :");
 		int n=s.nextInt();
+		int sum=0;
+		float avg;
 		int[] a=new int[n];
 		for(int i=0;i<n;i++)
 		{
@@ -17,20 +18,13 @@ public class PrintFiveNumbers {
 		}
 		s.close();
 		
-		System.out.println("Array elements printing  usin for loop :");
 		for(int i=0;i<n;i++)
 		{
-			System.out.println(a[i]);
-			
+			sum+=a[i];
 		}
-		
-		System.out.println("Array elements printing  usin for each loop :");
-		for(int i:a)
-		{
-			System.out.println(i);
-			
-		}
-
+		avg=(float) sum/n;
+		System.out.println("SUM= "+sum);
+		System.out.println("Average=  "+avg);
 	}
 
 }
